@@ -9,6 +9,9 @@ import { shortcutsExtension } from '../../lib/markdown'
 import { getCollection } from 'astro:content'
 import { ASSET_URL } from '../../constants'
 import { Schema } from 'astro-seo-schema'
+import sitemap from 'sitemap-ext:config'
+
+sitemap(true)
 
 export async function getStaticPaths() {
   const pages = await getCollection('locations')

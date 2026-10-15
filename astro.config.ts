@@ -3,6 +3,8 @@ import { defineConfig } from 'astro/config'
 
 import UnoCSS from 'unocss/astro'
 import playformCompress from '@playform/compress'
+import sitemap from '@inox-tools/sitemap-ext'
+
 
 // https://astro.build/config
 export default defineConfig({
@@ -15,6 +17,7 @@ export default defineConfig({
     playformCompress({
       Image: false,
     }),
+    sitemap(),
   ],
   image: {
     domains: ['10.2.100.6:8055', 'cms.illawarraadventist.org'],

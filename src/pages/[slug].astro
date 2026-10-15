@@ -6,6 +6,9 @@ import Button from '../components/Button.astro'
 import { Markdown } from 'astro-remote'
 import { shortcutsExtension } from '../lib/markdown'
 import { getCollection } from 'astro:content'
+import sitemap from 'sitemap-ext:config'
+
+sitemap(true)
 
 export async function getStaticPaths() {
   const pages = await getCollection('pages')
