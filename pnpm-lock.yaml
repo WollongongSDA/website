@@ -57,6 +57,9 @@ importers:
       '@iconify-json/mdi':
         specifier: ^1.2.3
         version: 1.2.3
+      '@unocss/astro':
+        specifier: ^66.11.0
+        version: 66.11.0(cac@7.1.0)(srvx@1.0.5)(vite@8.3.4(@types/node@26.1.2)(jiti@2.7.0)(terser@5.49.2)(yaml@2.9.1))
       '@unocss/preset-wind4':
         specifier: ^66.11.0
         version: 66.11.0
@@ -68,7 +71,7 @@ importers:
         version: 8.9.2
       unocss:
         specifier: ^66.11.0
-        version: 66.11.0(@oxc-project/types@0.153.0)(cac@7.1.0)(rolldown@1.2.13)(srvx@1.0.5)(vite@8.3.4(@types/node@26.1.2)(jiti@2.7.0)(terser@5.49.2)(yaml@2.9.1))
+        version: 66.11.0(@oxc-project/types@0.153.0)(@unocss/astro@66.11.0(cac@7.1.0)(srvx@1.0.5)(vite@8.3.4(@types/node@26.1.2)(jiti@2.7.0)(terser@5.49.2)(yaml@2.9.1)))(cac@7.1.0)(rolldown@1.2.13)(srvx@1.0.5)(vite@8.3.4(@types/node@26.1.2)(jiti@2.7.0)(terser@5.49.2)(yaml@2.9.1))
 
 packages:
 
@@ -1151,6 +1154,14 @@ packages:
 
   '@ungap/structured-clone@1.4.0':
     resolution: {integrity: sha512-1mEZtMKPM09vDmQt5y7YvmN2+DFTP7Tg0EWXdic8/C6VRnpb33e4ghisCIE3WZjsE2N8mf+QV1Zqh7ZFYLWInQ==}
+
+  '@unocss/astro@66.11.0':
+    resolution: {integrity: sha512-UaDsy5Tf+H87TQr6tu6E2+K3t6YO4dEIMCqxQwWRV1n5qvx0Tj/jD8K+/u10D5cKDMmG4ne9J6yB8C621Q5lTA==}
+    peerDependencies:
+      vite: ^5.0.0-0 || ^6.0.0-0 || ^7.0.0-0 || ^8.0.0-0
+    peerDependenciesMeta:
+      vite:
+        optional: true
 
   '@unocss/autocomplete@66.11.0':
     resolution: {integrity: sha512-+lxwoW2J8iLfBJkjb1eEzamhWAtrsEEUaiGbdOyl5IQN8CekigUfFJ8UVlJklCVaRyiK1RbIvVWK+SC/kBUkvg==}
@@ -3460,6 +3471,19 @@ snapshots:
 
   '@ungap/structured-clone@1.4.0': {}
 
+  '@unocss/astro@66.11.0(cac@7.1.0)(srvx@1.0.5)(vite@8.3.4(@types/node@26.1.2)(jiti@2.7.0)(terser@5.49.2)(yaml@2.9.1))':
+    dependencies:
+      '@unocss/core': 66.11.0
+      '@unocss/reset': 66.11.0
+      '@unocss/vite': 66.11.0(cac@7.1.0)(srvx@1.0.5)(vite@8.3.4(@types/node@26.1.2)(jiti@2.7.0)(terser@5.49.2)(yaml@2.9.1))
+    optionalDependencies:
+      vite: 8.3.4(@types/node@26.1.2)(jiti@2.7.0)(terser@5.49.2)(yaml@2.9.1)
+    transitivePeerDependencies:
+      - '@devframes/agentic'
+      - cac
+      - ocache
+      - srvx
+
   '@unocss/autocomplete@66.11.0':
     dependencies:
       fzf: 0.5.2
@@ -4822,7 +4846,7 @@ snapshots:
       unist-util-is: 6.0.1
       unist-util-visit-parents: 6.0.2
 
-  unocss@66.11.0(@oxc-project/types@0.153.0)(cac@7.1.0)(rolldown@1.2.13)(srvx@1.0.5)(vite@8.3.4(@types/node@26.1.2)(jiti@2.7.0)(terser@5.49.2)(yaml@2.9.1)):
+  unocss@66.11.0(@oxc-project/types@0.153.0)(@unocss/astro@66.11.0(cac@7.1.0)(srvx@1.0.5)(vite@8.3.4(@types/node@26.1.2)(jiti@2.7.0)(terser@5.49.2)(yaml@2.9.1)))(cac@7.1.0)(rolldown@1.2.13)(srvx@1.0.5)(vite@8.3.4(@types/node@26.1.2)(jiti@2.7.0)(terser@5.49.2)(yaml@2.9.1)):
     dependencies:
       '@unocss/cli': 66.11.0
       '@unocss/core': 66.11.0
@@ -4842,6 +4866,8 @@ snapshots:
       '@unocss/transformer-directives': 66.11.0
       '@unocss/transformer-variant-group': 66.11.0
       '@unocss/vite': 66.11.0(cac@7.1.0)(srvx@1.0.5)(vite@8.3.4(@types/node@26.1.2)(jiti@2.7.0)(terser@5.49.2)(yaml@2.9.1))
+    optionalDependencies:
+      '@unocss/astro': 66.11.0(cac@7.1.0)(srvx@1.0.5)(vite@8.3.4(@types/node@26.1.2)(jiti@2.7.0)(terser@5.49.2)(yaml@2.9.1))
     transitivePeerDependencies:
       - '@devframes/agentic'
       - '@oxc-project/types'
