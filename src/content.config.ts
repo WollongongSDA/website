@@ -1,4 +1,5 @@
-import { defineCollection, z } from 'astro:content'
+import { defineCollection } from 'astro:content'
+import { z } from 'astro/zod'
 import directus from './lib/directus'
 import { readItems } from '@directus/sdk'
 
@@ -17,8 +18,8 @@ const locations = defineCollection({
     status: z.string(),
     sort: z.optional(z.number()),
     content: z.string(),
-    background: z.string().uuid(),
-    logo: z.string().uuid(),
+    background: z.uuid(),
+    logo: z.uuid(),
     name: z.string(),
     slug: z.string(),
     overview: z.string(),
@@ -42,12 +43,12 @@ const ministries = defineCollection({
     })
   },
   schema: z.object({
-    id: z.string().uuid(),
+    id: z.uuid(),
     status: z.string(),
     sort: z.optional(z.number()),
     content: z.string(),
-    background: z.string().uuid(),
-    preview: z.string().uuid().nullable(),
+    background: z.uuid(),
+    preview: z.uuid().nullable(),
     name: z.string(),
     slug: z.string(),
     overview: z.string(),
@@ -84,7 +85,7 @@ const pages = defineCollection({
     })
   },
   schema: z.object({
-    id: z.string().uuid(),
+    id: z.uuid(),
     status: z.string(),
     title: z.string(),
     slug: z.string(),
@@ -103,7 +104,7 @@ const global_socialbuttons = defineCollection({
     })
   },
   schema: z.object({
-    id: z.string().uuid(),
+    id: z.uuid(),
     status: z.string(),
     sort: z.optional(z.number()),
     name: z.string(),

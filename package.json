@@ -11,13 +11,13 @@
     "check": "astro check --minimumFailingSeverity hint"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.6",
-    "@astrojs/mdx": "4.3.13",
+    "@astrojs/check": "^0.9.10",
+    "@astrojs/mdx": "8.0.3",
     "@directus/sdk": "^20.1.1",
     "@fontsource-variable/noto-sans": "^5.2.10",
     "@playform/compress": "^0.2.0",
     "@types/marked": "^5.0.2",
-    "astro": "^5.16.6",
+    "astro": "^7.3.8",
     "astro-remote": "^0.3.4",
     "astro-seo-schema": "^7.0.0",
     "gsap": "^3.13.0",
