@@ -10,6 +10,10 @@
     "astro": "astro",
     "check": "astro check --minimumFailingSeverity hint"
   },
+  "packageManager": "pnpm@12.5.1",
+  "devEngines": {
+    "runtime": { "name": "node", "version": "^26.0.0", "onFail": "download" }
+  },
   "dependencies": {
     "@astrojs/check": "^0.9.10",
     "@astrojs/mdx": "8.0.3",
