@@ -19,8 +19,10 @@
     "@types/marked": "^5.0.2",
     "astro": "^5.16.6",
     "astro-remote": "^0.3.4",
+    "astro-seo-schema": "^7.0.0",
     "gsap": "^3.13.0",
     "marked": "^12.0.2",
+    "schema-dts": "^2.0.0",
     "sharp": "^0.34.5",
     "typescript": "^5.9.3",
     "vue": "^3.5.24"
@@ -29,6 +31,7 @@
     "@iconify-json/mdi": "^1.2.3",
     "@unocss/preset-wind4": "^66.5.7",
     "@unocss/reset": "^66.5.7",
+    "node-addon-api": "^8.9.2",
     "unocss": "^66.5.7"
   }
 }

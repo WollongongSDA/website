@@ -14,6 +14,7 @@ interface Props {
     newtab?: boolean
   }>
   image: string
+  imageAlt?: string
 }
 
 const imageDetails = await getImageDetails(Astro.props.image)
@@ -27,7 +28,7 @@ const imageDetails = await getImageDetails(Astro.props.image)
       src={IMAGE_URL(Astro.props.image)}
       layout="constrained"
       class="h-full aspect-auto object-cover"
-      alt=""
+      alt={Astro.props.imageAlt ?? ""}
       formats={['avif', 'webp']}
       fallbackFormat="jpg"
       priority

@@ -8,6 +8,7 @@ import { Markdown } from 'astro-remote'
 import { shortcutsExtension } from '../../lib/markdown'
 import { getCollection } from 'astro:content'
 import { ASSET_URL } from '../../constants'
+import { Schema } from 'astro-seo-schema'
 
 export async function getStaticPaths() {
   const pages = await getCollection('locations')
@@ -23,18 +24,33 @@ const quote = {
 }
 
 const page = Astro.props.page.data
-
-const ld = {
-  '@context': 'https://schema.org',
-  '@type': 'Church',
-  name: page.name + ' Seventh-day Adventist Church',
-  photo: [ASSET_URL(page.background)],
-  url: Astro.request.url,
-}
 ---
 
-<BaseLayout title={page.name} jsonld={[ld]} description={page.overview}>
-  <RightImageHero headingImage={page.logo + '.svg'} image={page.background}>
+<BaseLayout title={page.full_name} description={page.overview}>
+  {
+    page.street_address && (
+      <Schema
+        item={{
+          '@context': 'https://schema.org',
+          '@type': 'Church',
+          name: page.full_name,
+          description: page.overview,
+          image: ASSET_URL(page.background),
+          logo: new URL('/favicon.svg', Astro.site).toString(),
+          url: Astro.request.url,
+          address: {
+            '@type': 'PostalAddress',
+            streetAddress: page.street_address,
+            ...(page.address_locality ? { addressLocality: page.address_locality } : {}),
+            ...(page.address_region ? { addressRegion: page.address_region } : {}),
+            ...(page.postal_code ? { postalCode: page.postal_code } : {}),
+            ...(page.address_country ? { addressCountry: page.address_country } : {}),
+          },
+        }}
+      />
+    )
+  }
+  <RightImageHero headingImage={page.logo + '.svg'} image={page.background} imageAlt={page.full_name}>
     {page.overview}
   </RightImageHero>
   <TextBlock>

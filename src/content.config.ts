@@ -22,6 +22,12 @@ const locations = defineCollection({
     name: z.string(),
     slug: z.string(),
     overview: z.string(),
+    full_name: z.string(),
+    street_address: z.string().nullable().optional(),
+    address_locality: z.string().nullable().optional(),
+    address_region: z.string().nullable().optional(),
+    postal_code: z.string().nullable().optional(),
+    address_country: z.string().nullable().optional(),
   }),
 })
 

@@ -10,6 +10,12 @@ type Location = {
   name: string
   slug: string
   overview: string
+  full_name: string
+  street_address?: string | null
+  address_locality?: string | null
+  address_region?: string | null
+  postal_code?: string | null
+  address_country?: string | null
 }
 
 type Ministry = {
